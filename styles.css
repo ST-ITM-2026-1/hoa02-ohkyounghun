@@ -2,6 +2,22 @@
    BASE LAYOUT
    ===================== */
 
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #222;
+    --surface-color: white;
+    --border-color: #ddd;
+    --accent-color: #0077ff;
+}
+
+body.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --surface-color: #2a2a2a;
+    --border-color: #444;
+    --accent-color: #4da3ff;
+}
+
 /* Make body a vertical flex container so header, nav, main, footer stack on top of each other.
    min-height: 100vh means the page is always at least as tall as the screen,
    so the footer never floats up when content is short. */
