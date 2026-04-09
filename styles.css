@@ -1,0 +1,360 @@
+/* =====================
+   BASE LAYOUT
+   ===================== */
+
+/* Make body a vertical flex container so header, nav, main, footer stack on top of each other.
+   min-height: 100vh means the page is always at least as tall as the screen,
+   so the footer never floats up when content is short. */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+    margin: 0;
+    /* Remove default browser margin */
+}
+
+/* =====================
+   SEMANTIC TAGS
+   ===================== */
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Make nav links sit side by side using flex */
+nav {
+    display: flex;
+    justify-content: center;
+    /* Center the links horizontally */
+    gap: 30px;
+    /* Space between each link */
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 20px;
+    /* up down , left right */
+}
+
+/* Default link style - no underline */
+nav a {
+    color: #222;
+    text-decoration: none;
+}
+
+/* Active link = the page you are currently on.
+   Added class="active" in HTML on the current page's link. */
+nav a.active {
+    color: #0077ff;
+    font-weight: bold;
+    border-bottom: 2px solid #0077ff;
+    padding-bottom: 2px;
+}
+
+/* Keep visited links the same color (browsers turn them purple by default) */
+nav a:visited {
+    color: #222;
+}
+
+/* Change color when mouse hovers over a link */
+nav a:hover {
+    color: #0077ff;
+}
+
+/* flex: 1 means main takes up all leftover space,
+   which pushes the footer down to the bottom of the page */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    /* Center the content inside */
+    padding: 40px 20px;
+}
+
+/* =====================
+   HOME PAGE LAYOUT
+   ===================== */
+
+/* .container holds the photo (.left) and text (.right) side by side */
+.container {
+    display: flex;
+    align-items: flex-start;
+    /* Align both to the top */
+    gap: 50px;
+    /* Space between photo and text */
+    width: 90%;
+    max-width: 1100px;
+    /* Do not grow wider than 1100px */
+}
+
+/* .left is the profile photo area.
+   clamp(min, preferred, max) = responsive width.
+   Width is 22% of the screen, but never smaller than 260px or larger than 320px. */
+.left {
+    width: clamp(260px, 22vw, 320px);
+}
+
+/* Make the image fill its container */
+.left img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* Keep the original aspect ratio */
+    border-radius: 10px;
+    /* Round the corners */
+}
+
+/* .right takes up all remaining space next to the photo */
+.right {
+    flex: 1;
+}
+
+/* =====================
+   CARD (section)
+   ===================== */
+
+/* Every section looks like a white card */
+section {
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* =====================
+   PROJECTS PAGE
+   ===================== */
+.projects-container {
+    width: 90%;
+    max-width: 1100px;
+}
+
+.project-summary {
+    margin-top: 10px;
+    color: rgb(117, 109, 109);
+    font-size: 16px;
+}
+
+/* GitHub button - outlined style by default */
+.github-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    border: 1px solid #0077ff;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #0077ff;
+    text-decoration: none;
+}
+
+/* Fill with blue when hovered */
+.github-btn:hover {
+    background-color: #0077ff;
+    color: white;
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #0077ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   SKILLS PAGE
+   ===================== */
+
+/* 2-column grid layout for skill sections */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns */
+    gap: 10px 40px;
+    /* Row gap 10px, column gap 40px */
+}
+
+.skills-grid section {
+    border: 1px solid #ddd;
+}
+
+/* Each skill row: name on the left, badge on the right */
+.skills-grid li {
+    display: flex;
+    justify-content: space-between;
+    /* Push name and badge to opposite ends */
+    align-items: flex-start;
+    padding: 10px;
+    background: #e1e1e1;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    list-style: none;
+    /* Remove the default bullet point */
+}
+
+/* =====================
+   SKILL LEVEL BADGES
+   ===================== */
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+    /* Pill shape */
+    white-space: nowrap;
+    /* Never wrap to next line */
+}
+
+/* Blue = Beginner */
+.badge.beginner {
+    background-color: #d0ebff;
+    color: #1971c2;
+}
+
+/* Green = Intermediate */
+.badge.intermediate {
+    background-color: #d3f9d8;
+    color: #2f9e44;
+}
+
+/* Orange = Advanced */
+.badge.advanced {
+    background-color: #ffe8cc;
+    color: #e67700;
+}
+
+
+/* =====================
+   CONTACT PAGE
+   ===================== */
+
+/* Keep the form centered and not too wide */
+.contact-container {
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Each .form-group stacks its label on top of its input */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* Same style for both text inputs and the textarea */
+.form-group input,
+.form-group textarea {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    /* Use same font as the rest of the page */
+    background-color: #fafafa;
+    outline: none;
+    /* Remove the default browser focus ring */
+}
+
+/* Blue border when the user clicks on an input */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0077ff;
+    background-color: white;
+}
+
+/* Submit button */
+.submit-btn {
+    padding: 10px 24px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    /* Show a hand cursor on hover */
+}
+
+/* Darker blue on hover */
+.submit-btn:hover {
+    background-color: #005ecc;
+}
+
+
+/* =====================
+   RESPONSIVE - MOBILE (0 ~ 480px)
+   ===================== */
+
+@media (max-width: 480px) {
+
+    /* Stack nav links vertically on small screens */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    /* Stack photo and text vertically instead of side by side */
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left {
+        width: 180px;
+    }
+
+    .right {
+        text-align: center;
+    }
+
+    /* Switch skills from 2 columns to 1 column */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================
+   RESPONSIVE - TABLET (481px ~ 768px)
+   ===================== */
+
+@media (min-width: 481px) and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left {
+        width: 180px;
+    }
+
+    .right {
+        text-align: center;
+    }
+}

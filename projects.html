@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Hi, I'm KyungHun Oh</h1>
+        <p>ITM Student | Backend Developer</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a> <!-- class="active" marks the current page link -->
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <!-- .projects-container: wraps all project cards and limits the max width -->
+        <div class="projects-container">
+
+            <!-- Each section is one project card -->
+            <section>
+                <h2>🎮 Solo Adventure Maze</h2>
+                <p class="project-summary">A Java-based RPG game built with object-oriented design.</p>
+                <!-- Short description shown in gray -->
+                <ul>
+                    <li>Java-based text adventure game using OOP</li>
+                    <li>Turn-based combat and inventory system</li>
+                    <li>CSV-based map loading</li>
+                </ul>
+                <!-- class="github-btn": applies the button style defined in CSS -->
+                <a href="https://github.com/gunuzello/ITM2-1_CL_TeamProject_MazeGame" target="_blank"
+                    rel="noopener noreferrer" class="github-btn">
+                    GitHub
+                </a>
+                <!-- for security , rel="noopener noreferrer" is needed -->
+            </section>
+
+            <section>
+                <h2>🧠 Memory Hierarchy Cache Simulation</h2>
+                <p class="project-summary">A simulation of a multi-level cache system with LRU-based replacement policy.
+                </p>
+                <ul>
+                    <li>Java project simulating a 4-layer memory hierarchy using arrays only</li>
+                    <li>Implemented a 2-way set associative L3 cache with LRU replacement policy</li>
+                    <li>Simulated real-world access patterns and analyzed cache hit ratio</li>
+                </ul>
+                <a href="https://github.com/ohkyounghun/CS-TeamProject" target="_blank" rel="noopener noreferrer"
+                    class="github-btn">
+                    GitHub</a>
+            </section>
+
+            <section>
+                <h2>📄 CheckMate</h2>
+                <p class="project-summary">A document validation platform built with Spring Boot and React.</p>
+                <ul>
+                    <li>Java-based plagiarism detection tool</li>
+                    <li>Spring Boot + React web app</li>
+                    <li>REST API and OpenAI integration</li>
+                </ul>
+                <a href="https://github.com/kwon-dohun/oss_teamproject2025" target="_blank" rel="noopener noreferrer"
+                    class="github-btn">GitHub</a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Email: ohkyounghun@seoultech.ac.kr</p>
+        <p>© 2026 KyungHun Oh</p>
+        <p>
+            GitHub: <a href="https://github.com/ohkyounghun" target="_blank" rel="noopener noreferrer">ohkyounghun</a>
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html> <!-- Tells the browser this is an HTML5 document -->
+<html lang="en"> <!-- Sets the page language to English -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Supports all characters including Korean -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on mobile -->
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <script src="scripts.js" defer></script>
+    <!-- Link to external JavaScript file, defer loads it after HTML parsing -->
+</head>
+
+<body>
+    <!-- header: semantic tag for the top section of the page -->
+    <header>
+        <h1>Hi, I'm KyungHun Oh</h1> <!-- h1: the most important heading on the page -->
+        <p>ITM Student | Backend Developer</p>
+    </header>
+
+    <!-- nav: semantic tag for the navigation bar -->
+    <nav>
+        <a href="index.html" class="active">Home</a> <!-- class="active" marks the current page link -->
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- main: semantic tag for the main content of the page -->
+    <main>
+        <!-- .container: flex container that places photo (.left) and text (.right) side by side -->
+        <div class="container">
+
+            <!-- .left: profile photo area -->
+            <div class="left">
+                <img src="images/IMG_0297.jpg" alt="KyungHun Oh profile photo">
+                <!-- alt: describes the image for accessibility -->
+            </div>
+
+            <!-- .right: text content area -->
+            <div class="right">
+                <!-- section: semantic tag that groups related content -->
+                <section>
+                    <h2>About Me</h2> <!-- h2: second level heading, used inside sections -->
+                    <ul> <!-- ul: unordered list (bullet points) -->
+                        <li>Seoul National University of Science and Technology (SeoulTech)</li>
+                        <li>Major in Information Technology Management (ITM, 3rd Year)</li>
+                        <li>Passionate about backend development, database systems, and fintech solutions</li>
+                    </ul>
+                    <h2>Certificates</h2>
+                    <ul>
+                        <li>SQL Developer (SQLD)</li>
+                        <li>IELTS 6.0</li>
+                    </ul>
+                </section>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- footer: semantic tag for the bottom section of the page -->
+    <footer>
+        <p>Email: ohkyounghun@seoultech.ac.kr</p>
+        <p>© 2026 KyungHun Oh</p>
+        <p>
+            <!-- target="_blank": opens link in a new tab
+                 rel="noopener noreferrer": security setting for external links -->
+            GitHub: <a href="https://github.com/ohkyounghun" target="_blank" rel="noopener noreferrer">ohkyounghun</a>
+        </p>
+    </footer>
+</body>
+
+</html>

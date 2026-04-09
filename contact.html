@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Hi, I'm KyungHun Oh</h1>
+        <p>ITM Student | Backend Developer</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html" class="active">Contact</a> <!-- class="active" marks the current page link -->
+    </nav>
+
+    <main>
+        <!-- .contact-container: centers the form and limits its width to 600px -->
+        <div class="contact-container">
+            <section>
+                <h2>Get in Touch</h2>
+                <p>Feel free to reach out for collaborations, questions, or just a hello!</p>
+
+                <!-- form: user input area (non-functional at this stage, layout only) -->
+                <form>
+                    <!-- .form-group: groups one label and one input together vertically -->
+                    <div class="form-group">
+                        <!-- for="name" connects this label to the input with id="name"
+                             Clicking the label will focus the input -->
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <!-- type="email": browser will validate the email format -->
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What is this about?">
+                        <!-- single-line text input -->
+                    </div>
+
+                    <div class="form-group">
+                        <!-- textarea: multi-line text input, rows sets the initial height -->
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6"
+                            placeholder="Write your message here..."></textarea>
+                        <!-- multi-line text input -->
+                    </div>
+
+                    <!-- type="submit": submits the form when clicked -->
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Email: ohkyounghun@seoultech.ac.kr</p>
+        <p>© 2026 KyungHun Oh</p>
+        <p>
+            GitHub: <a href="https://github.com/ohkyounghun" target="_blank" rel="noopener noreferrer">ohkyounghun</a>
+        </p>
+    </footer>
+</body>
+
+</html>

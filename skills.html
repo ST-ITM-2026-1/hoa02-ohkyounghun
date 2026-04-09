@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Hi, I'm KyungHun Oh</h1>
+        <p>ITM Student | Backend Developer</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html" class="active">Skills</a> <!-- class="active" marks the current page link -->
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <!-- .skills-grid: CSS Grid container that creates a 2-column layout -->
+        <div class="skills-grid">
+
+            <section>
+                <h2>Programming Languages</h2>
+                <ul>
+                    <!-- Each li has two spans: skill name (left) and level badge (right)
+                         They are pushed apart using justify-content: space-between in CSS -->
+                    <li><span>Java</span><span class="badge intermediate">Intermediate</span></li>
+                    <li><span>C</span><span class="badge beginner">Beginner</span></li>
+                    <li><span>Python</span><span class="badge beginner">Beginner</span></li>
+                    <li><span>JavaScript</span><span class="badge beginner">Beginner</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Frameworks</h2>
+                <ul>
+                    <li><span>Spring Boot</span><span class="badge beginner">Beginner</span></li>
+                    <li><span>React</span><span class="badge beginner">Beginner</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Database</h2>
+                <ul>
+                    <li><span>Oracle SQL</span><span class="badge intermediate">Intermediate</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Tools & Platforms</h2>
+                <ul>
+                    <li><span>GitHub</span><span class="badge intermediate">Intermediate</span></li>
+                    <li><span>GitHub Actions</span><span class="badge beginner">Beginner</span></li>
+                    <li><span>Docker</span><span class="badge beginner">Beginner</span></li>
+                    <li><span>Notion</span><span class="badge intermediate">Intermediate</span></li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Email: ohkyounghun@seoultech.ac.kr</p>
+        <p>© 2026 KyungHun Oh</p>
+        <p>
+            GitHub: <a href="https://github.com/ohkyounghun" target="_blank" rel="noopener noreferrer">ohkyounghun</a>
+        </p>
+    </footer>
+</body>
+
+</html>
