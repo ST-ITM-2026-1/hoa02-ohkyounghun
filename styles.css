@@ -9,6 +9,8 @@
     --header-color: #f9f9f9;
     --border-color: #ddd;
     --accent-color: #0077ff;
+    --btn-bg: #333;
+    --btn-color: white;
 }
 
 body.dark-theme {
@@ -18,6 +20,8 @@ body.dark-theme {
     --header-color: #242424;
     --border-color: #444;
     --accent-color: #4da3ff;
+    --btn-bg: #f0f0f0;
+    --btn-color: #333;
 }
 
 /* Make body a vertical flex container so header, nav, main, footer stack on top of each other.
@@ -31,6 +35,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
     /* Remove default browser margin */
 }
 
@@ -56,6 +61,19 @@ nav {
     border-bottom: 1px solid var(--border-color);
     padding: 15px 20px;
     /* up down , left right */
+}
+
+#theme-btn {
+    font-size: 1.5rem;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 38px;
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    border-radius: 8px;
+    border: none;
 }
 
 /* Default link style - no underline */
