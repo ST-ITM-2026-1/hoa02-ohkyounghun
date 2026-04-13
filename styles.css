@@ -193,6 +193,24 @@ section {
     color: var(--surface-color);
 }
 
+.filter-btn {
+    flex: 1;
+    padding: 8px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.filter-btn:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
 /* =====================
    FOOTER
    ===================== */

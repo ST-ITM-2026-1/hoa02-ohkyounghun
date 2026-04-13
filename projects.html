@@ -27,8 +27,16 @@
         <!-- .projects-container: wraps all project cards and limits the max width -->
         <div class="projects-container">
 
+
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="game">Game</button>
+            <button class="filter-btn" data-filter="systems">Systems</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+
+
+
             <!-- Each section is one project card -->
-            <section>
+            <section data-category="game">
                 <h2>🎮 Solo Adventure Maze</h2>
                 <p class="project-summary">A Java-based RPG game built with object-oriented design.</p>
                 <!-- Short description shown in gray -->
@@ -45,7 +53,7 @@
                 <!-- for security , rel="noopener noreferrer" is needed -->
             </section>
 
-            <section>
+            <section data-category="systems">
                 <h2>🧠 Memory Hierarchy Cache Simulation</h2>
                 <p class="project-summary">A simulation of a multi-level cache system with LRU-based replacement policy.
                 </p>
@@ -59,7 +67,7 @@
                     GitHub</a>
             </section>
 
-            <section>
+            <section data-category="web">
                 <h2>📄 CheckMate</h2>
                 <p class="project-summary">A document validation platform built with Spring Boot and React.</p>
                 <ul>
@@ -71,7 +79,7 @@
                     class="github-btn">GitHub</a>
             </section>
 
-            <section>
+            <section data-category="systems">
                 <h2>⚙️ xv6 OS Project</h2>
                 <p class="project-summary">An educational OS kernel extension based on xv6 (RISC-V).</p>
                 <ul>
