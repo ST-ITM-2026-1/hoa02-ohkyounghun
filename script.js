@@ -9,6 +9,9 @@ function init() {
     filter.forEach(btn => {
         btn.addEventListener("click", handleFilter);
     });
+
+    document.querySelector("#status-message").textContent = "Loading GitHub data...";
+
     fetchGitHubProfile();
     fetchGitHubRepos();
 }
@@ -63,6 +66,7 @@ async function fetchGitHubProfile() {
         <p>Followers: ${followers}</p>
         <p>Followings: ${followings}</p>
     `;
+        document.querySelector("#status-message").textContent = "";
     }
 
     catch (error) {
@@ -80,16 +84,17 @@ async function fetchGitHubRepos() {
         const repos = document.querySelector("#repos");
 
         data.forEach(repo => {
-            const card = document.createElement("article");
+            const card = document.createElement("section");
             card.innerHTML = `
-            <h3>${repo.name}</h3>
+            <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
             <p>${repo.description || "No description"}</p>
             <p>${repo.language || "N/A"}</p>
             <p>⭐ ${repo.stargazers_count}</p>
             <p>🍴 ${repo.forks_count}</p>
-            <a href="${repo.html_url}" target="_blank">GitHub</a>
+            
        `;
             repos.appendChild(card);
+            document.querySelector("#status-message").textContent = "";
         });
     }
     catch (error) {
