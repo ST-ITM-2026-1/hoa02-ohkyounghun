@@ -62,7 +62,7 @@ async function fetchGitHubProfile() {
         <p>Public Repos: ${publicRepos}</p>
         <p>Followers: ${followers}</p>
         <p>Followings: ${followings}</p>
-    `
+    `;
     }
 
     catch (error) {
@@ -75,9 +75,27 @@ async function fetchGitHubRepos() {
         const response = await fetch("https://api.github.com/users/ohkyounghun/repos");
         const data = await response.json();
 
+        console.log(data);
+
+        const repos = document.querySelector("#repos");
+
+        data.forEach(repo => {
+            const card = document.createElement("article");
+            card.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description || "No description"}</p>
+            <p>${repo.language || "N/A"}</p>
+            <p>⭐ ${repo.stargazers_count}</p>
+            <p>🍴 ${repo.forks_count}</p>
+            <a href="${repo.html_url}" target="_blank">GitHub</a>
+       `;
+            repos.appendChild(card);
+        });
     }
     catch (error) {
         console.log(error);
     }
-
 }
+
+
+
