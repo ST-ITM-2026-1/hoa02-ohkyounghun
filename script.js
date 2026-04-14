@@ -9,6 +9,8 @@ function init() {
     filter.forEach(btn => {
         btn.addEventListener("click", handleFilter);
     });
+    fetchGitHubProfile();
+    fetchGitHubRepos();
 }
 
 function toggleTheme() {
@@ -38,13 +40,44 @@ function handleFilter(e) {
 }
 
 async function fetchGitHubProfile() {
-    const response = await fetch("https://api.github.com/users/ohkyounghun");
-    const data = await response.json();
+    try {
+        const response = await fetch("https://api.github.com/users/ohkyounghun");
+        const data = await response.json();
 
+        //console.log(data);
+
+        const name = data.login;
+        const profilePhoto = data.avatar_url;
+        const bio = data.bio;
+        const publicRepos = data.public_repos;
+        const followers = data.followers;
+        const followings = data.following;
+
+        const profileDiv = document.querySelector("#profile");
+
+        profileDiv.innerHTML = `
+        <img src="${profilePhoto}" alt="${name}">
+        <h2>${name}</h2>
+        <p>${bio}</p>
+        <p>Public Repos: ${publicRepos}</p>
+        <p>Followers: ${followers}</p>
+        <p>Followings: ${followings}</p>
+    `
+    }
+
+    catch (error) {
+        console.log(error);
+    }
 }
 
 async function fetchGitHubRepos() {
-    const response = await fetch("https://api.github.com/users/ohkyounghun/repos");
-    const data = await response.json();
+    try {
+        const response = await fetch("https://api.github.com/users/ohkyounghun/repos");
+        const data = await response.json();
+
+    }
+    catch (error) {
+        console.log(error);
+    }
 
 }
