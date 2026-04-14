@@ -36,3 +36,15 @@ function handleFilter(e) {
         }
     });
 }
+
+async function fetchGitHubProfile() {
+    const response = await fetch("https://api.github.com/users/ohkyounghun");
+    const data = await response.json();
+
+}
+
+async function fetchGitHubRepos() {
+    const response = await fetch("https://api.github.com/users/ohkyounghun/repos");
+    const data = await response.json();
+
+}
