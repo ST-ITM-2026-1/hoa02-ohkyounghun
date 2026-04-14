@@ -253,10 +253,11 @@ footer a:hover {
     /* Push name and badge to opposite ends */
     align-items: flex-start;
     padding: 10px;
-    background: #e1e1e1;
+    background: var(--border-color);
     border-radius: 8px;
     margin-bottom: 8px;
     list-style: none;
+
     /* Remove the default bullet point */
 }
 
@@ -387,6 +388,11 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* =====================
+   GITHUB PAGE
+   ===================== */
+
 
 /* =====================
    RESPONSIVE - TABLET (481px ~ 768px)
