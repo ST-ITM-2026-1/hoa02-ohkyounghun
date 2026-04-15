@@ -34,7 +34,6 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    margin: 0;
     transition: background-color 0.3s, color 0.3s;
     /* Remove default browser margin */
 }
@@ -355,6 +354,40 @@ footer a:hover {
     background-color: var(--accent-color);
 }
 
+/* =====================
+   GITHUB PAGE
+   ===================== */
+
+#profile {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#profile img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.github-container #repos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 40px;
+}
+
+#repos section h3 a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#repos section h3 a:hover {
+    color: var(--accent-color);
+}
+
+#repos-title {
+    grid-column: 1 / -1;
+}
 
 /* =====================
    RESPONSIVE - MOBILE (0 ~ 480px)
@@ -388,11 +421,6 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 }
-
-/* =====================
-   GITHUB PAGE
-   ===================== */
-
 
 /* =====================
    RESPONSIVE - TABLET (481px ~ 768px)

@@ -26,7 +26,6 @@ function toggleTheme() {
     else {
         btn.textContent = "☽"
     }
-
 }
 
 function handleFilter(e) {
@@ -34,7 +33,7 @@ function handleFilter(e) {
     const projects = document.querySelectorAll(".projects-container section");
     projects.forEach(project => {
         if (filter === "all" || project.dataset.category === filter) {
-            project.style.display = "block";  // appear
+            project.style.display = "block";
         }
         else {
             project.style.display = "none";
@@ -46,9 +45,6 @@ async function fetchGitHubProfile() {
     try {
         const response = await fetch("https://api.github.com/users/ohkyounghun");
         const data = await response.json();
-
-        //console.log(data);
-
         const name = data.login;
         const profilePhoto = data.avatar_url;
         const bio = data.bio;
@@ -59,9 +55,10 @@ async function fetchGitHubProfile() {
         const profileDiv = document.querySelector("#profile");
 
         profileDiv.innerHTML = `
+        <h2>Github Profile</h2>
         <img src="${profilePhoto}" alt="${name}">
         <h2>${name}</h2>
-        <p>${bio}</p>
+        <p>${bio || "No bio available."}</p>
         <p>Public Repos: ${publicRepos}</p>
         <p>Followers: ${followers}</p>
         <p>Followings: ${followings}</p>
@@ -78,20 +75,16 @@ async function fetchGitHubRepos() {
     try {
         const response = await fetch("https://api.github.com/users/ohkyounghun/repos");
         const data = await response.json();
-
-        console.log(data);
-
         const repos = document.querySelector("#repos");
-
+        repos.innerHTML = '<h2 id="repos-title">Repositories</h2>';
         data.forEach(repo => {
             const card = document.createElement("section");
             card.innerHTML = `
             <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
             <p>${repo.description || "No description"}</p>
-            <p>${repo.language || "N/A"}</p>
+            <p>Language: ${repo.language || "N/A"}</p>
             <p>⭐ ${repo.stargazers_count}</p>
             <p>🍴 ${repo.forks_count}</p>
-            
        `;
             repos.appendChild(card);
             document.querySelector("#status-message").textContent = "";
@@ -101,6 +94,3 @@ async function fetchGitHubRepos() {
         console.log(error);
     }
 }
-
-
-
