@@ -10,10 +10,12 @@ function init() {
         btn.addEventListener("click", handleFilter);
     });
 
-    document.querySelector("#status-message").textContent = "Loading GitHub data...";
-
-    fetchGitHubProfile();
-    fetchGitHubRepos();
+    const statusMessage = document.querySelector("#status-message");
+    if (statusMessage) {
+        statusMessage.textContent = "Loading GitHub data...";
+        fetchGitHubProfile();
+        fetchGitHubRepos();
+    }
 }
 
 function toggleTheme() {
