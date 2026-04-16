@@ -31,6 +31,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -113,40 +114,21 @@ main {
 /* =====================
    HOME PAGE LAYOUT
    ===================== */
-
-/* .container holds the photo (.left) and text (.right) side by side */
-.container {
+.home-section {
     display: flex;
-    align-items: flex-start;
-    /* Align both to the top */
+    justify-content: start;
+    /* ← flex-start 에서 변경 */
     gap: 50px;
-    /* Space between photo and text */
     width: 90%;
     max-width: 1100px;
-    /* Do not grow wider than 1100px */
 }
 
-/* .left is the profile photo area.
-   clamp(min, preferred, max) = responsive width.
-   Width is 22% of the screen, but never smaller than 260px or larger than 320px. */
-.left {
-    width: clamp(260px, 22vw, 320px);
-}
-
-/* Make the image fill its container */
-.left img {
-    display: block;
-    width: 100%;
-    height: auto;
-    /* Keep the original aspect ratio */
+.home-section img {
+    width: 300px;
+    max-height: 430px;
     border-radius: 10px;
-    /* Round the corners */
 }
 
-/* .right takes up all remaining space next to the photo */
-.right {
-    flex: 1;
-}
 
 /* =====================
    CARD (section)
@@ -349,11 +331,6 @@ footer a:hover {
     /* Show a hand cursor on hover */
 }
 
-/* Darker blue on hover */
-.submit-btn:hover {
-    background-color: var(--accent-color);
-}
-
 /* =====================
    GITHUB PAGE
    ===================== */
@@ -396,28 +373,33 @@ footer a:hover {
 @media (max-width: 480px) {
 
     /* Stack nav links vertically on small screens */
+    h1 {
+        font-size: 1.5rem;
+    }
+
     nav {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
     }
 
-    /* Stack photo and text vertically instead of side by side */
-    .container {
-        flex-direction: column;
-        align-items: center;
+    .home-section {
+        flex-direction: column
     }
 
-    .left {
-        width: 180px;
-    }
-
-    .right {
-        text-align: center;
+    .home-section img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
     }
 
     /* Switch skills from 2 columns to 1 column */
     .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .github-container #repos {
         grid-template-columns: 1fr;
     }
 }
@@ -433,16 +415,8 @@ footer a:hover {
         gap: 12px;
     }
 
-    .container {
+    .home-section {
         flex-direction: column;
         align-items: center;
-    }
-
-    .left {
-        width: 180px;
-    }
-
-    .right {
-        text-align: center;
     }
 }

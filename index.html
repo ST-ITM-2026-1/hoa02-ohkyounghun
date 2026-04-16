@@ -29,34 +29,22 @@
 
     <!-- main: semantic tag for the main content of the page -->
     <main>
-        <!-- .container: flex container that places photo (.left) and text (.right) side by side -->
-        <div class="container">
-
-            <!-- .left: profile photo area -->
-            <div class="left">
-                <img src="images/IMG_0297.jpg" alt="KyungHun Oh profile photo">
-                <!-- alt: describes the image for accessibility -->
+        <section class="home-section">
+            <img src="images/IMG_0297.jpg" alt="KyungHun Oh profile photo">
+            <div>
+                <h2>About Me</h2> <!-- h2: second level heading, used inside sections -->
+                <ul> <!-- ul: unordered list (bullet points) -->
+                    <li>Seoul National University of Science and Technology (SeoulTech)</li>
+                    <li>Major in Information Technology Management (ITM, 3rd Year)</li>
+                    <li>Passionate about backend development, database systems, and fintech solutions</li>
+                </ul>
+                <h2>Certificates</h2>
+                <ul>
+                    <li>SQL Developer (SQLD)</li>
+                    <li>IELTS 6.0</li>
+                </ul>
             </div>
-
-            <!-- .right: text content area -->
-            <div class="right">
-                <!-- section: semantic tag that groups related content -->
-                <section>
-                    <h2>About Me</h2> <!-- h2: second level heading, used inside sections -->
-                    <ul> <!-- ul: unordered list (bullet points) -->
-                        <li>Seoul National University of Science and Technology (SeoulTech)</li>
-                        <li>Major in Information Technology Management (ITM, 3rd Year)</li>
-                        <li>Passionate about backend development, database systems, and fintech solutions</li>
-                    </ul>
-                    <h2>Certificates</h2>
-                    <ul>
-                        <li>SQL Developer (SQLD)</li>
-                        <li>IELTS 6.0</li>
-                    </ul>
-                </section>
-            </div>
-
-        </div>
+        </section>
     </main>
 
     <!-- footer: semantic tag for the bottom section of the page -->
