@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
     btn = document.querySelector("#theme-btn");
     btn.addEventListener("click", toggleTheme);
+
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-theme");
+        btn.textContent = "☀";
+    }
+
     filter = document.querySelectorAll(".filter-btn");
     filter.forEach(btn => {
         btn.addEventListener("click", handleFilter);
@@ -24,9 +30,11 @@ function toggleTheme() {
     const isDark = document.body.classList.contains("dark-theme");
     if (isDark) {
         btn.textContent = "☀";
+        localStorage.setItem("theme", "dark");
     }
     else {
         btn.textContent = "☽"
+        localStorage.setItem("theme", "light");
     }
 }
 
